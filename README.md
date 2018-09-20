@@ -1,0 +1,2 @@
+# foxloader
+Automatic browser
