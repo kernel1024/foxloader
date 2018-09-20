@@ -213,8 +213,9 @@ void MainWindow::saveFile(int idx, const QUrl& origin, const QByteArray &data)
     }
 
     QString path = QFileInfo(origin.path()).fileName();
+    int numlen = QString("%1").arg(ui->spinStop->value()).length();
     QString fname = QString("%1_%2")
-                    .arg(idx,10,10,QLatin1Char('0'))
+                    .arg(idx,numlen,10,QLatin1Char('0'))
                     .arg(path);
     QFile f(savePath.absoluteFilePath(fname));
     if (!f.open(QIODevice::WriteOnly)) {
